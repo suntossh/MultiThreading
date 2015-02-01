@@ -1,0 +1,12 @@
+package Demo;
+
+public class Processor {
+	
+	public void produce(){
+		
+	}
+
+	public void consume(){
+		
+	}
+}

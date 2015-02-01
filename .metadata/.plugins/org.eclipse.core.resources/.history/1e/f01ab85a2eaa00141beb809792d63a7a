@@ -1,0 +1,22 @@
+package Demo;
+
+import java.util.LinkedList;
+
+public class Processor {
+
+	private LinkedList<Integer> commonRscList = new LinkedList<Integer>();
+	private final int LIMIT = 10;
+
+	public void producer() {
+		System.out.println("Producer stared ..... ");
+
+		System.out.println("Producer completed");
+	}
+
+	public void consumer() {
+		System.out.println("Consumer stared ..... ");
+
+		System.out.println("Consumer completed");
+	}
+
+}

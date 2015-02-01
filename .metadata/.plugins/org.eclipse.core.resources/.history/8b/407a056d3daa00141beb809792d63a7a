@@ -1,0 +1,22 @@
+package Demo;
+
+public class Processor {
+    
+	private int count;
+	
+	private void increment(){
+		count++;
+	}
+	
+	public void processOne(){
+		increment();
+	}
+	
+	public void processTwo(){
+		increment();
+	}
+	
+	public void totalCount(){
+		System.out.println("Total count : "+ count);
+	}
+}

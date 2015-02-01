@@ -1,0 +1,29 @@
+package Demo;
+
+import java.util.LinkedList;
+
+public class Processor {
+
+	private LinkedList<Integer> commonRscList = new LinkedList<Integer>();
+	private final int LIMIT = 10;
+	private final Object lock = new Object();
+	
+	public void producer() {
+		System.out.println("Producer stared ..... ");
+		synchronized (lock) {
+			while(commonRscList.size() == 0){
+				lock.wait();
+			}
+		}
+		
+		System.out.println("Producer completed");
+	}
+
+	public void consumer() throws InterruptedException {
+		Thread.sleep(2000);
+		System.out.println("Consumer stared ..... ");
+
+		System.out.println("Consumer completed");
+	}
+
+}

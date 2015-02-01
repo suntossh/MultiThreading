@@ -1,0 +1,27 @@
+package Demo;
+
+public class App9 {
+
+	public static void main(String[] args) {
+		
+	Processor processor = new Processor();
+	
+	Thread t1 = new Thread(new Runnable() {
+		public void run() {
+			
+		}
+	});
+	
+	Thread t2 = new Thread(new Runnable() {
+		public void run() {
+			
+		}
+	});
+	}
+	
+	t1.start();
+	t2.start();
+	
+	
+
+}

@@ -1,0 +1,48 @@
+package Demo;
+
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+public class Processor {
+
+	private int count;
+	private Lock lock = new ReentrantLock();
+	private Condition cond = lock.newCondition();
+
+	private void increment() {
+		for (int i = 0; i < 10000; i++) {
+			count++;
+		}
+	}
+
+	public void processOne() throws InterruptedException {
+		try {
+			lock.lock();// similar to synchronization of block of code, here
+						// lock is taken
+			System.out.println(" ProcessorOne Lock Obtained");
+			System.out.println(" ProcessorOne will WAIT "); 
+			cond.await();// give up the lock
+			increment();
+		} finally {
+			lock.unlock();// // similar to synchronization of block of code,
+							// here lock is released
+		}
+	}
+
+	public void processTwo() {
+		try {
+			Thread.sleep(2000);
+			lock.lock();
+			increment();
+			lock.unlock();
+		} finally {
+			lock.unlock();// // similar to synchronization of block of code,
+							// here lock is released
+		}
+	}
+
+	public void totalCount() {
+		System.out.println("Total count : " + count);
+	}
+}

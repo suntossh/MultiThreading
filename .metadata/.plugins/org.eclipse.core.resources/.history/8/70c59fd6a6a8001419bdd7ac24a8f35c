@@ -1,0 +1,16 @@
+package DemoPack;
+
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+
+public class App7 {
+
+	static BlockingQueue<Integer> blockingQueue = new ArrayBlockingQueue<Integer>(10);
+	
+	
+	
+	public static void main(String[] args) {
+
+	}
+
+}

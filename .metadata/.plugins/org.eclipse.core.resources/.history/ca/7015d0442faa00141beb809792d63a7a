@@ -1,0 +1,32 @@
+package Demo;
+
+import java.util.LinkedList;
+import java.util.Random;
+
+public class Processor {
+
+	private LinkedList<Integer> commonRscList = new LinkedList<Integer>();
+	private final int LIMIT = 10;
+	private final Object lock = new Object();
+	private final Random random = new Random();
+	public void producer() throws InterruptedException {
+		System.out.println("Producer stared ..... ");
+		synchronized (lock) {
+			while(commonRscList.size() == 0){
+				lock.wait();
+			}
+			commonRscList.add(random.nextInt(10));
+			
+		}
+		
+		System.out.println("Producer completed");
+	}
+
+	public void consumer() throws InterruptedException {
+		Thread.sleep(2000);
+		System.out.println("Consumer stared ..... ");
+
+		System.out.println("Consumer completed");
+	}
+
+}

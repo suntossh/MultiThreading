@@ -1,0 +1,30 @@
+package Demo;
+
+import java.util.Scanner;
+
+public class Processor {
+	
+	public void produce() throws InterruptedException{
+		System.out.println("Produce started...");
+		synchronized (this) {
+			wait();
+			System.out.println("Producer resumed");
+		}
+		
+	}
+
+	public void consume() throws InterruptedException{
+		System.out.println("Consume started....");
+		Thread.sleep(2000);
+		System.out.println("Please hit return button");
+		Scanner scanner = new Scanner(System.in);
+		scanner.nextLine();
+		synchronized (this) {
+			notify();
+			Thread.sleep(50000);
+		}
+		
+		
+		
+	}
+}

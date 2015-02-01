@@ -1,0 +1,28 @@
+package Demo;
+
+public class Processor {
+
+	private int count;
+
+	private void increment() {
+		for (int i = 0; i < 10000; i++) {
+			count++;
+		}
+	}
+
+	public void processOne() {
+		synchronized (this) {
+			increment();
+		}
+	}
+
+	public void processTwo() {
+		synchronized (this) {
+			increment();
+		}
+	}
+
+	public void totalCount() {
+		System.out.println("Total count : " + count);
+	}
+}

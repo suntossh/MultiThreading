@@ -1,0 +1,31 @@
+package DemoPack;
+
+import java.util.Random;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+
+public class App7 {
+	static Random random = new Random();
+			
+	static BlockingQueue<Integer> blockingQueue = new ArrayBlockingQueue<Integer>(10);
+	
+	private static void producer() throws InterruptedException{
+		while(true){
+			blockingQueue.put(random.nextInt(100));
+		}
+	}
+	
+	private static void consumer() throws InterruptedException{
+		Integer value;
+		while(true){
+			if(random.nextInt() == 10){
+				value = blockingQueue.take();
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+
+	}
+
+}

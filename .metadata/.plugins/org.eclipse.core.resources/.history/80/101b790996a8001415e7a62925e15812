@@ -1,0 +1,18 @@
+package Demo;
+
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class App {
+
+	public static void main(String[] args) {
+		
+		CountDownLatch latch = new CountDownLatch(3);
+		
+		ExecutorService executorService = Executors.newFixedThreadPool(3);
+		
+		
+	}
+
+}

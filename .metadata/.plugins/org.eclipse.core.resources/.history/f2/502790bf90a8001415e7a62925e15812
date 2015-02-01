@@ -1,0 +1,27 @@
+package Demo;
+
+class Processor implements Runnable {
+
+	private int id;
+	
+	public Processor(int id){
+		
+	}
+	
+	public void run() {
+
+		
+		
+	}
+	
+	
+}
+
+
+public class App5 {
+
+	public static void main(String[] args) {
+
+	}
+
+}

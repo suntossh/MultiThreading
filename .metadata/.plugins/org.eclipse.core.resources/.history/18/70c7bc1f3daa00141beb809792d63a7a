@@ -1,0 +1,22 @@
+package Demo;
+
+public class Processor {
+    
+	private int count;
+	
+	private void increment(){
+		count++;
+	}
+	
+	private void processOne(){
+		
+	}
+	
+	private void processTwo(){
+		
+	}
+	
+	private void totalCount(){
+		
+	}
+}

@@ -1,0 +1,24 @@
+package Demo;
+
+import java.util.Scanner;
+
+public class Processor {
+	
+	public void produce(){
+		System.out.println("Produce started...");
+		wait(this);
+		
+		
+	}
+
+	public void consume() throws InterruptedException{
+		System.out.println("Consume started....");
+		Thread.sleep(2000);
+		System.out.println("Please hit return button");
+		Scanner scanner = new Scanner(System.in);
+		scanner.nextLine();
+		
+		
+		
+	}
+}

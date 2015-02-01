@@ -1,0 +1,18 @@
+package Demo;
+
+import java.util.LinkedList;
+
+public class Processor {
+
+	private LinkedList<Integer> commonRscList = new LinkedList<Integer>();
+	private final int LIMIT = 10;
+	
+	public void producer(){
+		
+	}
+	
+	public void consumer(){
+		
+	}
+	
+}
